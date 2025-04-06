@@ -17,7 +17,7 @@ app.get("/getUsers", async (req,res) => {
     );
     console.log(JSON.stringify(data));
     await client.set("users", JSON.stringify(data));
-    client.expire("todos",30);
+    client.expire("users",30);
     return res.json(data);
   } catch (err) {
     console.error(err);
